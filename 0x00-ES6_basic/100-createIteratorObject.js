@@ -4,5 +4,5 @@ export default function createIteratorObject(report) {
 		if ([...employee].length > 0)
 			arr.push(...employee);
 	})
-	return arr
+	return arr.values()
 }
