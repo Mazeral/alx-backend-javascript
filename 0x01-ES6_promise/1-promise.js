@@ -3,7 +3,7 @@ export default function getFullResponseFromAPI(success) {
     if (success === true) {
       resolve({
         status: 200,
-        body: 'Sucess',
+        body: 'Success',
       });
     } else {
       // eslint is picky about the returning value of reject, it must be an object
