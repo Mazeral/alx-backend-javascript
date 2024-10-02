@@ -1,2 +1,2 @@
-# alx-backend-javascript
-Learning backend using javascript with ALX SWE specilisation course!
+# ALX-backend-javascript
+Learning the Back-End using Javascript with ALX SWE specialization course!
