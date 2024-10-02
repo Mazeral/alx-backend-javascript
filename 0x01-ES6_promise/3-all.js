@@ -1,8 +1,8 @@
-import { createUser, uploadPhoto } from './utils.js';
+import { createUser, uploadPhoto } from './utils';
 
-export default function handleProfileSignup() {
+export default async function handleProfileSignup() {
   // handles multiple promises at once
-  Promise.all([uploadPhoto(), createUser()])
+  return Promise.all([uploadPhoto(), createUser()])
     .then((results) => {
       const photoResponse = results[0];
       const userResponse = results[1];
