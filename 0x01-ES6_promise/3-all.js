@@ -1,6 +1,6 @@
 import { createUser, uploadPhoto } from './utils';
 
-export default function handleProfileSignup() {
+function handleProfileSignup() {
   const p1 = uploadPhoto();
   const p2 = createUser();
   // handles multiple promises at once
