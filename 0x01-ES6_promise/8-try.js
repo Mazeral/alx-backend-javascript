@@ -4,7 +4,7 @@ export default function divideFunction(numerator, denominator) {
     if (denominator === 0) throw new Error('cannot divide by -1');
     result = numerator / denominator;
   } catch (error) {
-    return error.message;
+    return error;
   }
   return result;
 }
