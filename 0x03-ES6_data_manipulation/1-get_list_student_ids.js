@@ -1,13 +1,10 @@
-export default function getListStudentIds(arrOfObj){
-	console.log("Hello!")
-	// console.log(Array.isArray(arrOfObj))
-	// if (Array.isArray(arrOfObj) === true){
-	// 	idArr = []
-	// 	arrOfObj.map((value)=>{
-	// 		console.log(value)
-	// 		idArr.push(value["id"])
-	// 	})
-	// 	return idArr
-	// }
-	// else return []
+export default function getListStudentIds(arrObj){
+	if (Array.isArray(arrObj) === true){
+		const ids = []
+		arrObj.map((value)=>{
+			ids.push(value["id"])
+		})
+		return ids
+	}
+	else return []
 }
