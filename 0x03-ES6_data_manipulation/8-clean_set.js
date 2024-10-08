@@ -1,16 +1,21 @@
 export default function cleanSet(set, startString) {
+  // If startString is empty or not a string, return an empty string
   if (!startString || typeof startString !== 'string') {
     return '';
   }
 
-  let result = '';
+  // Initialize an array to store the resulting values
+  const result = [];
 
+  // Iterate over the set
   set.forEach((value) => {
+    // Check if the value starts with startString
     if (value.startsWith(startString)) {
-      result += `${value.slice(startString.length)}-`;
+      // Append the substring after startString to the result array
+      result.push(value.slice(startString.length));
     }
   });
 
-  // Remove the last hyphen if it exists
-  return result.endsWith('-') ? result.slice(0, -1) : result;
+  // Join the array with '-' and return it as a string
+  return result.join('-');
 }
