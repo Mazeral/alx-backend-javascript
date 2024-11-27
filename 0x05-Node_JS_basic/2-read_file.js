@@ -7,6 +7,9 @@ function countStudents() {
     let results = null;
     const fields = [];
     fs.readFile('database.csv', (err, data) => {
+      if (err) {
+        throw new Error('Cannot load the database');
+      }
       results = data.toString();
       rows = results.split('\n');
       students = rows.filter((row) => row !== '').map((row) => row.split(','));
