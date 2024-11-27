@@ -1,18 +1,18 @@
 const fs = require('fs/promises');
 
-function processDatabase() {
+function processDatabase(database) {
   return new Promise((resolve, reject) => {
     (async () => {
       try {
         // Check if the file exists and is a valid file
-        const stats = await fs.stat('database.csv');
+        const stats = await fs.stat(database);
         if (!stats.isFile()) {
           reject(new Error('Cannot load the database'));
           return; // Stop further execution
         }
 
         // Read the file asynchronously
-        const data = await fs.readFile('database.csv', 'utf-8');
+        const data = await fs.readFile(database, 'utf-8');
 
         // Process the data
         const rows = data.trim().split('\n');
@@ -62,8 +62,8 @@ processDatabase()
   .then(() => {
 
   })
-  .catch((error) => {
-    process.stdout.write(`${error.message}\n`);
+  .catch(() => {
+
   });
 
 module.exports = processDatabase;
