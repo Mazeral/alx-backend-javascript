@@ -20,22 +20,17 @@ function countStudents() {
       });
       fields.forEach((field) => {
         let studnetsNumber = 0;
-        let studentNames = '';
+        const studentNames = [];
         students.forEach((student) => {
           if (student[3] === field) {
             studnetsNumber += 1;
           }
-          if (!studentNames.includes(field[0])) {
-            if (students.indexOf(student) !== students.length - 1) {
-              if (student[0] !== 'firstname') {
-                studentNames += `${student[0]}, `;
-              } else {
-                studentNames += `${student[0]}`;
-              }
-            }
+          if (student[0] !== 'firstname' && !studentNames.includes(student[0])) {
+            if (student[3] === field) studentNames.push(student[0]);
           }
         });
-        process.stdout.write(`Number of students in ${field}: ${studnetsNumber} ${studentNames}\n`);
+        const studentNamesStr = studentNames.join(', ');
+        process.stdout.write(`Number of students in ${field}: ${studnetsNumber} ${studentNamesStr}\n`);
       });
     });
   } catch (error) {
