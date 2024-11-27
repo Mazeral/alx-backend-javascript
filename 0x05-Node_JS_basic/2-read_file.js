@@ -6,9 +6,12 @@ function countStudents() {
     let rows = null;
     let results = null;
     const fields = [];
-    fs.readFile('database.csv', (err, data) => {
+    if (!fs.existsSync('database.csv') || !fs.statSync('database.csv').isFile()) {
+      throw new Error('Cannot load the database');
+    }
+    fs.readFileSync('database.csv', (err, data) => {
       if (err) {
-        throw new Error('Cannot load the database');
+        throw new Error('Cannot load the databse');
       }
       results = data.toString();
       rows = results.split('\n');
