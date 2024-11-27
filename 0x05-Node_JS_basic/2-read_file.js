@@ -25,7 +25,7 @@ function countStudents() {
           if (student[3] === field) {
             studnetsNumber += 1;
           }
-          if (!studentNames.includes(field[1])) {
+          if (!studentNames.includes(field[0])) {
             if (students.indexOf(student) !== students.length - 1) {
               if (student[0] !== 'firstname') {
                 studentNames += `${student[0]}, `;
