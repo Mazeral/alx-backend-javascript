@@ -1,30 +1,17 @@
-const readline = require('readline');
+const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-let name = null;
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
-
-// If there's piped input, read it directly
-if (!process.stdin.isTTY) {
-  process.stdin.on('data', (input) => {
-    name = input.toString().trim();
-    process.stdout.write(`Your name is: ${name}\n`);
-    process.exit(0);
-  });
-} else {
-  // If it's interactive input, ask for the name
-  rl.on('line', (input) => {
-    name = input.trim();
-    process.stdout.write(`Your name is: ${name}\n`);
-    rl.close(); // Close the readline interface
-  });
-}
+rl.question("Welcome to Holberton School, what is your name?\n", function(name) {
+  process.stdout.write(`Your name is: ${name}\n`); // Add a newline here for correct output formatting.
+  rl.close();
+});
 
 // Handle EOF (end of file) for graceful exit
 process.on('SIGINT', () => {
+  process.stdout.write('This important software is now closing');
   process.exit(0);
 });
