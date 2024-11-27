@@ -57,6 +57,7 @@ function createServer() {
           .catch((err) => {
             res.writeHead(500, { 'Content-Type': 'text/plain' });
             res.end('Error reading database file');
+            reject(err);
           });
       } else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
