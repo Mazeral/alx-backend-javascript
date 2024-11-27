@@ -11,7 +11,7 @@ rl.question("Welcome to Holberton School, what is your name?\n", function(name) 
 });
 
 // Handle EOF (end of file) for graceful exit
-process.on('SIGINT', () => {
-  process.stdout.write('This important software is now closing');
+process.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
   process.exit(0);
 });
