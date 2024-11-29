@@ -1,0 +1,15 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "Welcome to **0x06-unittests_in_js**! This project focuses on writing robust unit and integration tests using tools like Mocha, Chai, and Sinon. The tasks are designed to improve your ability to write effective test cases and understand testing methodologies for JavaScript applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.8.2"
+  }
+}
