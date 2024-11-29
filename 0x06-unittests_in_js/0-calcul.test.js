@@ -6,8 +6,8 @@ const assert = require('assert');
 describe('calculNumber', ()=>{
 	it('should add 2 numbers correctly', ()=>{
 		assert.strictEqual(calculateNumber(1, 3), 4);
-		assert.strictEqual(calculateNumber(1, 3.7), 4.7);
-		assert.strictEqual(calculateNumber(1.2, 3.7), 4.9);
-		assert.strictEqual(calculateNumber(1.5, 3.7), 5.2);
+		assert.strictEqual(calculateNumber(1, 3.7), 5);
+		assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+		assert.strictEqual(calculateNumber(1.5, 3.7), 6);
 	})
 })
